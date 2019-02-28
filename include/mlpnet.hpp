@@ -6,7 +6,7 @@ namespace mlpnet {
   // Define a new Module.
   struct MLPNet : torch::nn::Module {
     MLPNet() {
-      // Construct and register two Linear submodules.
+      // Construct and register three Linear submodules.
       fc1 = register_module("fc1", torch::nn::Linear(784, 64));
       fc2 = register_module("fc2", torch::nn::Linear(64, 32));
       fc3 = register_module("fc3", torch::nn::Linear(32, 10));
@@ -25,7 +25,7 @@ namespace mlpnet {
     // Use one of many "standard library" modules.
     torch::nn::Linear fc1{nullptr}, fc2{nullptr}, fc3{nullptr};
   };
-  
+
 }
 
 #endif
